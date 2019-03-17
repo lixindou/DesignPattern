@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters;
 
 namespace CorPattern
 {
@@ -10,6 +12,10 @@ namespace CorPattern
 
         public void Execute(object data)
         {
+            if (!(data is Purchase))
+            {
+                throw new ArgumentException("Invalid data type", nameof(data));
+            }
             _topHandler.Process(data as Purchase);
         }
 
