@@ -12,7 +12,6 @@ namespace CorPattern
 
         public void Process(Purchase data)
         {
-
             if (data.Amount < 25000.0)
             {
                 Console.WriteLine($"{this.GetType().Name} approved request# {data.Number}");

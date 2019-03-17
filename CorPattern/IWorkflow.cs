@@ -4,9 +4,9 @@ using System.Text;
 
 namespace CorPattern
 {
-    interface IWorkflow<THandler, TData>
+    interface IWorkflow<T> 
     {
-        void Execute(TData data);
-        void AddNextHandler(THandler handler);
+        void Execute(object data);
+        void AddNextHandler(T handler);
     } 
 }

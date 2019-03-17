@@ -3,11 +3,16 @@ using System.Linq;
 
 namespace CorPattern
 {
-    public class PurchseWorkFlow : IWorkflow<IHandler<Purchase>, Purchase>
+    public class PurchseWorkFlow : IWorkflow<IHandler<Purchase>>
     {
         private IHandler<Purchase> _topHandler;
         private IHandler<Purchase> _bottomHandler;
-           
+
+        public void Execute(object data)
+        {
+            _topHandler.Process(data as Purchase);
+        }
+
         public void AddNextHandler(IHandler<Purchase> handler)
         {
             if (_bottomHandler == null)
@@ -19,11 +24,6 @@ namespace CorPattern
                 _topHandler = handler;
                 _topHandler.SetSuccessor(_bottomHandler);
             }
-        }
-
-        public void Execute(Purchase data)
-        {
-            _topHandler.Process(data);
         }
     }
 }
