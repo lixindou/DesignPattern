@@ -5,10 +5,8 @@ namespace Decorator
     public class Book : ILibraryItem
     {
         public int NumCopies { get; set; }
-        private string _author;
-        private string _title;
-
-        // Constructor
+        private readonly string _author;
+        private readonly string _title;
 
         public Book(string author, string title, int numCopies)
         {
