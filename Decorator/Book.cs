@@ -6,7 +6,7 @@ namespace Decorator
     {
         public int NumCopies { get; set; }
         public readonly string _author;
-        private readonly string _title;
+        public readonly string _title;
 
         public Book(string author, string title, int numCopies)
         {
