@@ -5,11 +5,8 @@ namespace Decorator
     public class Book : ILibraryItem
     {
         public int NumCopies { get; set; }
-        private const string _author;
-        private string _title;
-
-        // Constructor
-
+        public readonly string _author;
+        private readonly string _title;
         public Book(string author, string title, int numCopies)
         {
             this._author = author ?? throw new ArgumentException();
