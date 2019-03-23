@@ -7,16 +7,17 @@ namespace CorPattern
 {
     public class PurchseWorkFlow : IWorkflow<IHandler<Purchase>>
     {
+        private readonly Purchase _purchase;
         private IHandler<Purchase> _topHandler;
         private IHandler<Purchase> _bottomHandler;
 
-        public void Execute(object data)
+        public PurchseWorkFlow(Purchase purchase)
         {
-            if (!(data is Purchase))
-            {
-                throw new ArgumentException("Invalid data type", nameof(data));
-            }
-            _topHandler.Process(data as Purchase);
+            _purchase = purchase;
+        }
+        public void Execute()
+        {
+           _topHandler.Process(_purchase);
         }
 
         public void AddNextHandler(IHandler<Purchase> handler)
