@@ -6,8 +6,7 @@ namespace Decorator
     {
         public int NumCopies { get; set; }
         public readonly string _author;
-        public readonly string _title;
-
+        private readonly string _title;
         public Book(string author, string title, int numCopies)
         {
             this._author = author ?? throw new ArgumentException();
