@@ -16,10 +16,11 @@ namespace Decorator
 
         public void Display()
         {
-            Console.WriteLine("\nBook ------ ");
+            Console.WriteLine("\nBook **** ");
             Console.WriteLine(" Author: {0}", _author);
             Console.WriteLine(" Title: {0}", _title);
             Console.WriteLine(" # Copies: {0}", NumCopies);
+            Console.WriteLine("\n **** ");
         }
     }
 }
