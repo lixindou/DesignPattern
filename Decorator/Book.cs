@@ -10,7 +10,7 @@ namespace Decorator
 
         public Book(string author, string title, int numCopies)
         {
-            this._author = author;
+            this._author = author ?? throw new ArgumentException();
             this._title = title;
             this.NumCopies = numCopies;
         }
