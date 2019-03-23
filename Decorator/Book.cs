@@ -5,7 +5,7 @@ namespace Decorator
     public class Book : ILibraryItem
     {
         public int NumCopies { get; set; }
-        private string _author;
+        private const string _author;
         private string _title;
 
         // Constructor
