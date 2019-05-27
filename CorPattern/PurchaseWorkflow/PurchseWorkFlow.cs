@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization.Formatters;
-
-namespace CorPattern
+﻿namespace CorPattern
 {
     public class PurchseWorkFlow : IWorkflow<IHandler<Purchase>>
     {
