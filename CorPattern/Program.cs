@@ -6,11 +6,30 @@ namespace CorPattern
     {
         static void Main()
         {
-            var purchase1 = new Purchase(001, 2000, "Traning");
-            RunPurchases(purchase1);
+            int expenseNumber = 1;
 
-            // Wait for user
-            Console.ReadKey();
+            Console.WriteLine("Director can approve expenses under 10,000");
+            Console.WriteLine("VP can approve expenses under 25,000");
+            Console.WriteLine("President can approve expenses under 100,000");
+            Console.WriteLine("Expenses exceed 100,000 needs BOD approval");
+
+            while (true)
+            {
+                Console.WriteLine("Process an expense: Y or N");
+                string answer = Console.ReadLine();
+                if (answer == "Y")
+                {
+                    Console.WriteLine("Enter amount of expense, it should be numbers");
+                    double amount = Double.Parse(Console.ReadLine());
+                    var purchase1 = new Purchase(expenseNumber, amount, "Training");
+                    RunPurchases(purchase1);
+                    expenseNumber++;
+                }
+                else
+                {
+                    break;
+                }
+            }
         }
 
         private static void RunPurchases(Purchase p)
