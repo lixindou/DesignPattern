@@ -3,8 +3,8 @@
     public class PurchseWorkFlow : IWorkflow<IHandler<Purchase>>
     {
         private readonly Purchase _purchase;
-        private IHandler<Purchase> _topHandler;
-        private IHandler<Purchase> _bottomHandler;
+        private IHandler<Purchase> _firstHandler;
+        private IHandler<Purchase> _lastHandler;
 
         public PurchseWorkFlow(Purchase purchase)
         {
@@ -12,19 +12,19 @@
         }
         public void Execute()
         {
-           _topHandler.Process(_purchase);
+            _firstHandler.Process(_purchase);
         }
 
         public void AddNextHandler(IHandler<Purchase> handler)
         {
-            if (_bottomHandler == null)
+            if (_firstHandler == null)
             {
-                _bottomHandler = _topHandler = handler;
+                _firstHandler = _lastHandler = handler;
             }
             else
             {
-                _topHandler = handler;
-                _topHandler.SetSuccessor(_bottomHandler);
+                _lastHandler.SetSuccessor(handler);
+                _lastHandler = handler;
             }
         }
     }

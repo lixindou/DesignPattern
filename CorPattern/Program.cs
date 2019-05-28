@@ -15,11 +15,11 @@ namespace CorPattern
 
             while (true)
             {
-                Console.WriteLine("Process an expense: Y or N");
+                Console.WriteLine("Enter Y to process an expense or hit any key to exit.");
                 string answer = Console.ReadLine();
                 if (answer == "Y")
                 {
-                    Console.WriteLine("Enter amount of expense, it should be numbers");
+                    Console.WriteLine("Enter amount of an expense, it should be numbers");
                     double amount = Double.Parse(Console.ReadLine());
                     var purchase1 = new Purchase(expenseNumber, amount, "Training");
                     RunPurchases(purchase1);
@@ -39,9 +39,9 @@ namespace CorPattern
             IHandler<Purchase> director = new Director();
             IHandler<Purchase> vp = new VicePresident();
             IHandler<Purchase> president = new President();
-            purchaseWf.AddNextHandler(president);
-            purchaseWf.AddNextHandler(vp);
             purchaseWf.AddNextHandler(director);
+            purchaseWf.AddNextHandler(vp);
+            purchaseWf.AddNextHandler(president);
             purchaseWf.Execute();
         }
     }
