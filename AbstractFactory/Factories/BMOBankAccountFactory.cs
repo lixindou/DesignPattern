@@ -7,7 +7,7 @@ namespace AbstractFactory.Factories
     {
         public ISavingAccount CreateSavingAccount(string accountNumber)
         {
-            return new BMOSavingAccount() {BankCode = BankCode.BMO, AccountNumber = accountNumber, Balance = };
+            return new BMOSavingAccount() {BankCode = BankCode.BMO, AccountNumber = accountNumber };
         }
 
         public ICheckingAccount CreateCheckingAccount(string accountNumber)
