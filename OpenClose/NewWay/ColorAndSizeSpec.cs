@@ -2,8 +2,8 @@
 {
     class ColorAndSizeSpec : ISpecification<Product>
     {
-        private Color color;
-        private Size size;
+        private readonly Color color;
+        private readonly Size size;
 
         public ColorAndSizeSpec(Color color, Size size)
         {

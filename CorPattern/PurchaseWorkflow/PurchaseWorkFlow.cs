@@ -1,12 +1,12 @@
 ﻿namespace CorPattern
 {
-    public class PurchseWorkFlow : IWorkflow<IHandler<Purchase>>
+    public class PurchaseWorkFlow : IWorkflow<IHandler<Purchase>>
     {
         private readonly Purchase _purchase;
         private IHandler<Purchase> _firstHandler;
         private IHandler<Purchase> _lastHandler;
 
-        public PurchseWorkFlow(Purchase purchase)
+        public PurchaseWorkFlow(Purchase purchase)
         {
             _purchase = purchase;
         }

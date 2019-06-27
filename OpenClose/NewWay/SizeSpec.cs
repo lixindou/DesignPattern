@@ -2,7 +2,7 @@
 {
     public class SizeSpec : ISpecification<Product>
     {
-        private Size size;
+        private readonly Size size;
 
         public SizeSpec(Size size)
         {

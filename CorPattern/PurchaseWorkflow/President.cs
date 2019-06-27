@@ -4,7 +4,7 @@ namespace CorPattern
 {
     public class President : IHandler<Purchase>
     {
-        private IHandler<Purchase> _successor;
+        private readonly IHandler<Purchase> _successor;
         public void SetSuccessor(IHandler<Purchase> successor)
         {
             throw new NotImplementedException();

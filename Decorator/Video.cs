@@ -4,9 +4,9 @@ namespace Decorator
 {
     public class Video :ILibraryItem
     {
-        private string _director;
-        private string _title;
-        private int _playTime;
+        private readonly string _director;
+        private readonly string _title;
+        private readonly int _playTime;
 
         public Video(string director, string title,
             int numCopies, int playTime)

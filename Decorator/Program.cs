@@ -17,14 +17,11 @@ namespace Decorator
             // Make video borrowable, then borrow and display
             Console.WriteLine("\nMaking video borrowable:");
 
-            Borrowable borrowvideo = new Borrowable(video);
-            borrowvideo.BorrowItem("Customer #1");
-            borrowvideo.BorrowItem("Customer #2");
+            Borrowable borrowVideo = new Borrowable(video);
+            borrowVideo.BorrowItem("Customer #1");
+            borrowVideo.BorrowItem("Customer #2");
 
-            borrowvideo.Display();
-
-            // Wait for user
-            Console.ReadKey();
+            borrowVideo.Display();
         }
     }
 }

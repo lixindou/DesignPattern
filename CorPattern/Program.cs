@@ -34,7 +34,7 @@ namespace CorPattern
 
         private static void RunPurchases(Purchase p)
         {
-            var purchaseWf = new PurchseWorkFlow(p);
+            var purchaseWf = new PurchaseWorkFlow(p);
 
             IHandler<Purchase> director = new Director();
             IHandler<Purchase> vp = new VicePresident();

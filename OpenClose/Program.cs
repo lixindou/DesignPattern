@@ -16,30 +16,34 @@ namespace OpenClose
 
             // Old way
             var oldFilter = new Filter();
-            var greenProduct = oldFilter.FilterByColor(products, Color.Green).Select(p => p.Name);
-            foreach (var name in greenProduct)
+            var greenProducts = oldFilter.FilterByColor(products, Color.Green).Select(p => p.Name);
+            foreach (var name in greenProducts)
             {
                 Console.WriteLine($"Green product: {name}");
             }
-            var bigProduct = oldFilter.FilterBySize(products, Size.Big).Select(p => p.Name);
-            foreach (var name in bigProduct)
+            var bigProducts = oldFilter.FilterBySize(products, Size.Big).Select(p => p.Name);
+            foreach (var name in bigProducts)
             {
                 Console.WriteLine($"Big product: {name}");
             }
 
             // new way
             var newFilter = new BetterFilter();
-            greenProduct = newFilter.Filter(products, new ColorSpec(Color.Green)).Select(p => p.Name);
-            foreach (var name in greenProduct)
+            greenProducts = newFilter.Filter(products, new ColorSpec(Color.Green)).Select(p => p.Name);
+            foreach (var name in greenProducts)
             {
                 Console.WriteLine($"Green product: {name}");
             }
-            bigProduct = newFilter.Filter(products, new SizeSpec(Size.Big)).Select(p => p.Name);
-            foreach (var name in bigProduct)
+            bigProducts = newFilter.Filter(products, new SizeSpec(Size.Big)).Select(p => p.Name);
+            foreach (var name in bigProducts)
             {
                 Console.WriteLine($"Big product: {name}");
             }
-            var greenAndBigProducts = newFilter.Filter(products, new ColorAndSizeSpec(Color.Green, Size.Big));
+            var greenAndBigProducts = newFilter.Filter(products, new ColorAndSizeSpec(Color.Green, Size.Big)).Select(p => p.Name);
+            foreach (var name in greenAndBigProducts)
+            {
+                Console.WriteLine($"Big and Green product: {name}");
+            }
             Console.ReadLine();
         }
     }
