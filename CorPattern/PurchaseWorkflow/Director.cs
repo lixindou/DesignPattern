@@ -17,7 +17,11 @@ namespace CorPattern
             }
             else
             {
-                _successor.Process(data);
+                if (_successor != null)
+                {
+                    _successor.Process(data);
+                }
+                Console.WriteLine($"{this.GetType().Name}  cannot approved request# {data.Number} and there is no successor to handle this request# {data.Number}");
             }
         }
     }
