@@ -14,15 +14,5 @@ namespace AbstractFactory.Factories
         {
             return new BMOCheckingAccount() {BankCode = BankCode.BMO, AccountNumber = accountNumber};
         }
-
-        public ISavingAccount ConvertCheckingAccountToSavingAccount(ICheckingAccount checkingAccount)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public ICheckingAccount ConvertSavingAccountToCheckingAccount(ISavingAccount savingAccount)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

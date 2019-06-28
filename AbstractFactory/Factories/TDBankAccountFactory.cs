@@ -14,15 +14,5 @@ namespace AbstractFactory.Factories
         {
             return new TDCheckingAccount() { BankCode = BankCode.TD, AccountNumber = accountNumber };
         }
-
-        public ISavingAccount ConvertCheckingAccountToSavingAccount(ICheckingAccount checkingAccount)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public ICheckingAccount ConvertSavingAccountToCheckingAccount(ISavingAccount savingAccount)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
